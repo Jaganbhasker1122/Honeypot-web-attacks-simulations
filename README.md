@@ -1,61 +1,100 @@
-# Honeypot Web Simulation
+<p align="center">
+  <a href="https://getbootstrap.com/">
+    <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="200" height="165">
+  </a>
+</p>
 
-A comprehensive web-based honeypot simulation to demonstrate various cybersecurity attack scenarios and educate users about security vulnerabilities. The project includes multiple attack demonstrations with detailed explanations to raise awareness about potential risks and countermeasures.
+<h3 align="center">Bootstrap Icons</h3>
 
-## Features
+<p align="center">
+  Official open source SVG icon library for Bootstrap with over 2,000 icons.
+  <br>
+  <a href="https://icons.getbootstrap.com/"><strong>Explore Bootstrap Icons »</strong></a>
+  <br>
+  <br>
+  <a href="https://getbootstrap.com/">Bootstrap</a>
+  ·
+  <a href="https://themes.getbootstrap.com/">Themes</a>
+  ·
+  <a href="https://blog.getbootstrap.com/">Blog</a>
+  <br>
+</p>
 
-### Simulated Attacks:
-- **SQL Injection**: Demonstrates how malicious SQL queries can compromise databases.
-- **Cross-Site Scripting (XSS)**: Explains how attackers can inject malicious scripts into web pages.
-- **Denial of Service (DoS)**: Simulates flooding a server with excessive requests.
-- **Keylogger Simulation**: Showcases how keystrokes can be captured.
-- **Adware**: Displays simulated malicious ads to mimic real-world adware behavior.
-- **Malicious File Downloading**: Warns users about downloading potentially harmful files.
+[![Bootstrap Icons preview](https://github.com/twbs/icons/blob/main/.github/preview.png)](https://icons.getbootstrap.com/)
 
-### Other Features:
-- **Interactive UI**: User-friendly design with detailed information cards for each attack.
-- **Learning Focus**: Explains how each attack works and its real-world implications.
-- **Home Navigation**: A central hub to explore different attack simulations.
-- **Secure Practices**: Highlights mitigation techniques and best practices for each attack.
+## Install
 
-## How to Use
+Bootstrap Icons are packaged up and published to npm. We only include the processed SVGs in this package—it's up to you and your team to implement. [Read our docs](https://icons.getbootstrap.com/) for usage instructions.
 
-1. Navigate to the homepage (`index.html`).
-2. Choose an attack simulation from the menu.
-3. Follow the instructions provided in the simulation.
-4. Read the detailed explanation and mitigation techniques in the info card.
+```shell
+npm i bootstrap-icons
+```
 
-## Demo
+For those [using Packagist](https://packagist.org/packages/twbs/bootstrap-icons), you can also install Bootstrap Icons via Composer:
 
-- **Live Demo**: [https://honeypot-web-simulation.netlify.app/index.html](https://honeypot-web-simulation.netlify.app/index.html)
+```shell
+composer require twbs/bootstrap-icons
+```
 
-## Screenshots
+[Also available in Figma](https://www.figma.com/community/file/1042482994486402696/Bootstrap-Icons).
 
-### Home Page
-![Home Page](assets/homepage.png)
+## Usage
 
-### SQL Injection Simulation
-![SQL Injection Simulation](assets/sql-injection.png)
+Depending on your setup, you can include Bootstrap Icons in a handful of ways.
 
-### DoS Attack Simulation
-![DoS Attack Simulation](assets/dos-attack.png)
+- Copy-paste SVGs as embedded HTML
+- Reference via `<img>` element
+- Use the SVG sprite
+- Include via CSS
 
-## Technologies Used
+[See the docs for more information](https://icons.getbootstrap.com/#usage).
 
-- **HTML5**: For creating the structure.
-- **CSS3**: For styling and responsive design.
-- **JavaScript**: For implementing attack logic and interactive features.
+## Development
 
-## Goals and Objectives
+[![Build Status](https://img.shields.io/github/actions/workflow/status/twbs/icons/test.yml?branch=main&label=Tests&logo=github)](https://github.com/twbs/icons/actions/workflows/test.yml?query=workflow%3ATests+branch%3Amain)
+[![npm version](https://img.shields.io/npm/v/bootstrap-icons?logo=npm&logoColor=fff)](https://www.npmjs.com/package/bootstrap-icons)
 
-- To educate users about cybersecurity threats through hands-on demonstrations.
-- To provide detailed insights into attack methodologies and their countermeasures.
-- To create an engaging platform for cybersecurity awareness.
+Clone the repo, install dependencies, and start the Hugo server locally.
 
-## Contact
+```shell
+git clone https://github.com/twbs/icons/
+cd icons
+npm i
+npm start
+```
 
-For any questions or suggestions, feel free to contact:
+Then open `http://localhost:4000` in your browser.
 
-- **Gurram Jagan Bhasker**
-  - **Email**: [jaganbhaskergurram@gmail.com](mailto:jaganbhaskergurram@gmail.com)
-  - **LinkedIn**: [Gurram Jagan Bhasker](https://www.linkedin.com/in/gurram-jagan-bhasker-a0906b29a)
+### npm scripts
+
+Here are some key scripts you'll use during development. Be sure to look to our `package.json` or `npm run` output for a complete list of scripts.
+
+| Script       | Description                                                                   |
+|--------------|-------------------------------------------------------------------------------|
+| `start`      | Alias for running `docs-serve`                                                |
+| `docs-serve` | Starts a local Hugo server                                                    |
+| `pages`      | Generates permalink pages for each icon with template Markdown                |
+| `icons`      | Processes and optimizes SVGs in `icons` directory, generates fonts and sprite |
+
+## Adding SVGs
+
+Icons are typically only added by @mdo, but exceptions can be made. New glyphs are designed in Figma first on a 16x16px grid, then exported as flattened SVGs with `fill` (no stroke). Once a new SVG icon has been added to the `icons` directory, we use an npm script to:
+
+1. Optimize our SVGs with SVGO.
+2. Modify the SVGs source code, removing all attributes before setting new attributes and values in our preferred order.
+
+Use `npm run icons` to run the script, run `npm run pages` to build permalink pages, complete those pages, and, finally, commit the results in a new branch for updating.
+
+**Warning**: Please exclude any auto-generated files, like `font/**` and `bootstrap-icons.svg` from your branch because they cause conflicts, and we generally update the dist files before a release.
+
+## Publishing
+
+Documentation is published automatically when a new Git tag is published. See our [GitHub Actions](https://github.com/twbs/icons/tree/main/.github/workflows) and [`package.json`](https://github.com/twbs/icons/blob/main/package.json) for more information.
+
+## License
+
+[MIT](LICENSE)
+
+## Author
+
+[@mdo](https://github.com/mdo)

@@ -1,0 +1,128 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Courier New', Courier, monospace; /* Retro-tech font */
+    background-color: #1c1c1c; /* Dark background for hacking theme */
+    color: #00b0ff; /* Blue text for headings */
+    line-height: 1.6;
+  }
+  .home-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .home-btn:hover {
+    background-color: #3498db;
+    transform: scale(1.1);
+  }
+  
+  /* Intro Section */
+  #intro {
+    text-align: center;
+    padding: 50px;
+    background-color: #111111;
+    border-bottom: 2px solid #00b0ff;
+  }
+  
+  #intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00b0ff;
+  }
+  
+  #intro p {
+    font-size: 1.2rem;
+    color: #39ff14; /* Green for paragraph text */
+  }
+  
+  /* Cards Section */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    background: #111111;
+  }
+  
+  .card {
+    background: #0f0f0f;
+    border: 2px solid #00b0ff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 176, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3); /* Subtle glow on hover */
+  }
+  
+  .card-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 2px solid #00b0ff;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00b0ff; /* Blue for heading */
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #39ff14; /* Green for paragraph text */
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: #00b0ff;
+    font-size: 1.1rem;
+    border: 2px solid #00b0ff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    align-self: center; /* Ensures button is centered */
+  }
+  
+  .card a:hover {
+    background-color: #39ff14;
+    color: #111111;
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cards-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
